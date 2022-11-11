@@ -24,7 +24,7 @@
                     <c:out value="${ronda.id}"/>
                 </td>
                 <td>                    
-                      <c:out value="${ronda.partida} "/>                                        
+                      <c:out value="${ronda.partidaId} "/>                                        
                 </td>
                 <td> 
                     <a href="/rondas/${ronda.id}/edit"> 

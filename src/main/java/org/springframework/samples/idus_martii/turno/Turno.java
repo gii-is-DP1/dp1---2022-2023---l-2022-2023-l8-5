@@ -8,8 +8,6 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
-import org.springframework.samples.idus_martii.jugador.Jugador;
 import org.springframework.samples.idus_martii.model.BaseEntity;
 import org.springframework.samples.idus_martii.ronda.Ronda;
 import lombok.Getter;
@@ -21,33 +19,26 @@ import lombok.Setter;
 @Table(name = "turno")
 public class Turno extends BaseEntity {
 	@NotNull
-	@ManyToOne
-    private Jugador consul;
-
+	@NotEmpty
+    private String consul;
 	@NotNull
-	@ManyToOne
-    private Jugador predor;
-
+	@NotEmpty
+    private String predor;
 	@NotNull
-	@ManyToOne
-	private Jugador edil1;
-
+	@NotEmpty
+    private String edil1;
 	@NotNull
-	@ManyToOne
-    private Jugador edil2;
-
+	@NotEmpty
+    private String edil2;
 	@Min(0)
 	@Max(2)
     private Integer votosTraidores;
-
 	@Min(0)
 	@Max(2)
     private Integer votosLeales;
-
 	@Min(0)
 	@Max(2)
     private Integer votosNeutrales;
-
 	@NotNull
 	@ManyToOne
 	@JoinColumn(name = "ronda_id")
