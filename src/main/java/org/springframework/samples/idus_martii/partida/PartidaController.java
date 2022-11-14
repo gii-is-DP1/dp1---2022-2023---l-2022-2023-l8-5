@@ -117,7 +117,9 @@ public class PartidaController {
 	        	partidaService.crearSufragium(idPartida, idPartida, 20);
 	        }*/
 	        
+	        
 	        return "redirect:/partida/"+jugador.getId().toString()+"/"+partida.getId().toString();
+	        //return "redirect:/partida/"+partida.getId().toString();
 		}
 	        	
 	}
