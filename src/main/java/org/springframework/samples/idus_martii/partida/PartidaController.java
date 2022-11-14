@@ -100,26 +100,9 @@ public class PartidaController {
 	        partida.setFechaCreacion(LocalDateTime.now());
 	        partida.setJugador(jugador);       
 	        this.partidaService.save(partida);
-	        int numj = partida.getNumeroJugadores();
-	        int idPartida = partida.getId();
-	        System.out.println("Número de jugadores: " + numj+ "Idpartida" + idPartida);
-	        partidaService.anadirLobby(partida.getId(),partida.getId());
-	        
-	        /*if(numj == 5) {
-	        	partidaService.crearSufragium(idPartida, idPartida, 13);
-	        }
-	        else if(numj==6) {
-	        	partidaService.crearSufragium(idPartida, idPartida, 15);
-	        }else if(numj==7){
-	        	partidaService.crearSufragium(idPartida, idPartida, 17);
-	        }
-	        else {
-	        	partidaService.crearSufragium(idPartida, idPartida, 20);
-	        }*/
 	        
 	        
 	        return "redirect:/partida/"+jugador.getId().toString()+"/"+partida.getId().toString();
-	        //return "redirect:/partida/"+partida.getId().toString();
 		}
 	        	
 	}
@@ -206,6 +189,29 @@ public class PartidaController {
         
         return result;
     }
+    
+    
+    
+    
+    
+    
+    
+    /*int numj = partida.getNumeroJugadores();
+    int idPartida = partida.getId();
+    System.out.println("Número de jugadores: " + numj+ "Idpartida" + idPartida);
+    partidaService.anadirLobby(partida.getId(),partida.getId());
+    
+    if(numj == 5) {
+    	partidaService.crearSufragium(idPartida, idPartida, 13);
+    }
+    else if(numj==6) {
+    	partidaService.crearSufragium(idPartida, idPartida, 15);
+    }else if(numj==7){
+    	partidaService.crearSufragium(idPartida, idPartida, 17);
+    }
+    else {
+    	partidaService.crearSufragium(idPartida, idPartida, 20);
+    }*/
     
     
 }
