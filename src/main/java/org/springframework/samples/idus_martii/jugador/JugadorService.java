@@ -71,7 +71,6 @@ public class JugadorService {
 		try{
 			j= this.jugadorRepo.findById(id).get();
 		}catch(Exception e) {
-			System.out.println("No existe e jugador con Id: "+ id);
 		}
 		return j;
 	}
@@ -137,8 +136,12 @@ public class JugadorService {
 	
 	@Transactional
     public void deleteJugadorById(int id){
+		Jugador jugadororiginal = getJugadorById(id);
+		for(Jugador j:jugadororiginal.getSetAmigos()) {
+			deleteAmigo(id,j.getId());
+		}
+		
         this.jugadorRepo.deleteById(id);
     }
-
 	
 }
